@@ -1,5 +1,7 @@
 # datascience-template
 
+https://mosaic-ai.streamlit.app/
+
 [![Source Code Check](https://github.com/icoxfog417/datascience-template/actions/workflows/ci.yml/badge.svg)](https://github.com/icoxfog417/datascience-template/actions/workflows/ci.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
