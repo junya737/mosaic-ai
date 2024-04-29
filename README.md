@@ -1,51 +1,76 @@
-# datascience-template
+# あなた以外をモザイク処理するAIアプリ
 
-https://mosaic-ai.streamlit.app/
+## かんたんな説明
 
-[![Source Code Check](https://github.com/icoxfog417/datascience-template/actions/workflows/ci.yml/badge.svg)](https://github.com/icoxfog417/datascience-template/actions/workflows/ci.yml)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Code style: flake8](https://img.shields.io/badge/code%20style-flake8-black)](https://github.com/PyCQA/flake8)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![Typing: mypy](https://img.shields.io/badge/typing-mypy-blue)](https://github.com/python/mypy)
+何かとプライバシーに気を使わないといけない現代．
 
-Well structured and tested data science project template. You can use this [template](https://docs.github.com/ja/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) when creating the data sicence repository.
+SNSに写真をアップするとき，他の人の顔をモザイク処理したいけど，自分の顔は見せたい．そんなときありませんか？
+AIの力を使って，画像の中からあなたの顔を認識し，あなた以外の顔をモザイク処理します！これで，めんどくさいモザイク処理からはおさらばだ！
+
+[こちら](https://mosaic-ai.streamlit.app/)からぜひ試してみてください！
+
+<figure>
+  <img src="image.jpeg" alt="image">
+  <center>
+  <figcaption>イメージ図</figcaption>
+</figure>
+
+## 詳しい説明
+
+このアプリは，Python．[Face-Recognition API](https://github.com/ageitgey/face_recognition)，Streamlitフレームワークを使用して構築されたモザイク処理アプリです．
+このアプリは，アップロードされた写真から特定の人物以外の顔にモザイク処理を施します．
+face_recognitionライブラリによって埋め込み表現を計算し，その類似性を求めることで顔認識を行っています．
+モザイク処理後の画像はダウンロードが可能です．
+以下でローカルでのインストール方法，実行方法を示していますが，Streamlit cloud上でお手軽に実行もできます．
+
+URL: https://mosaic-ai.streamlit.app/
 
 
-📁 **Organized**: The project structure is refereed to [Cookiecutter Data Science](https://github.com/drivendata/cookiecutter-data-science)
+### 用途
 
-🚀 **Prepared**: Major libraries are prepared in `environment.yml`. If you are familiar with [Colaboratory](https://colab.research.google.com/?utm_source=scs-index) environment, please use `environment-colab.yml` .
+- SNSに他人の写真をアップする際のプライバシー保護
 
-✅ **Tested**: `scripts` are checked by common linter when [pre-commit](https://pre-commit.com/).
+### 機能
 
-Here is the notebook link to provide the quick access to your analysis. You can create the conda environment by Right click `Build Conda Environment` or `conda create -f environment.yml` in Studio Lab.
 
-[![Open in SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/icoxfog417/datascience-template/blob/main/notebooks/example.ipynb)
+- 人間の顔の検知と認識
+- 複数の人間が含まれる画像に対応
+- 特定の人物を除いたモザイク処理
+- わかりやすいUI
 
-## Project Structure
+### 要件
+ローカルで実行する際には，以下の要件が必要です．
 
-```bash
-.
-├── data
-│   ├── external                    # data from third party sources.
-│   ├── processed                   # data after processing
-│   ├── interim                     # data that transformed
-│   └── raw                         # raw data
-├── models                          # store models
-├── notebooks                       # store notebooks
-├── docs                            # documentation for your project
-├── .gitignore                      # ignore files that cannot commit to Git
-├── .pre-commit-config.yaml         # configurations for pre-commit
-├── pyproject.toml                  # dependencies for poetry
-├── README.md                       # describe your project
-├── scripts                         # store source code used in notebook
-│   └── __init__.py                 # make src a Python module
-└── tests                           # store tests
-    └── __init__.py                 # make tests a Python module
+- Ubuntu 22.04.4 LTS
+- Python 3.10.0
+- face_recognition
+- streamlit==1.33.0
+- opencv-python
+
+### インストールと実行手順
+
+1. リポジトリをクローン
+```
+git clone git@github.com:junya737/mosaic-ai.git
+cd mosaic-ai
 ```
 
-## Customization
+2. conda環境と必要なライブラリの導入
+```
+conda env create -f environment.yml
+```
 
-* `environment.yml`: Please specify the packages and versions. As a default, no version is specified.
-* `.pre-commit-config.yaml`: Please check the `rev` to check the code.
-* Change the Notebook url for `Open in Studio Lab`.
+3. アプリを実行
+```
+cd scripts
+streamlit run frontend.py
+```
+これを実行すると，Network URLが得られるので，それをお使いのブラウザに入力するとアプリを実行できます．
+
+#### 連絡先
+何かご要件，ご要望があれば以下まで．
+
+junya737[@]gmail.com
+
+
+
