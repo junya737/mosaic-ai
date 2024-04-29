@@ -57,7 +57,7 @@ cd mosaic-ai
 
 2. conda環境と必要なライブラリの導入
 ```
-conda env create -f environment.yml
+conda env create -f /environment/environment.yml
 ```
 
 3. アプリを実行
