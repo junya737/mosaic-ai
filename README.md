@@ -70,7 +70,7 @@ streamlit run frontend.py
 #### 連絡先
 何かご要件，ご要望があれば以下まで．
 
-junya737[@]gmail.com
+junyaihira[@]gmail.com
 
 
 
